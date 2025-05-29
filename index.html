@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <script src = "script.js" defer></script>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+
+
+
+
+<body>
+
+    <div class = "heading">
+        <h1> Library App </h1>
+    </div>
+
+
+
+    <div class = "column-names">
+        <div class = "column-1">
+            <h1> Book Name </h1>
+        </div>
+        <div class = "column-2">
+            <h1> Author </h1>
+        </div>
+        <div class = "column-3">
+            <h1> Pages </h1>
+        </div>
+        <div class = "column-4">
+            <h1> Status </h1>
+        </div>
+    </div>
+
+
+
+    <div id = "container">
+
+        <div id = "bookslist"></div>
+        <div id = "authorlist"></div>
+        <div id = "pagelist"></div>
+        <div id = "status"></div>
+
+    </div>
+
+
+    
+    <div class = "bottomhalf">
+        
+        <button id = "addbook"> Add new book </button>
+        <button id = "removebook"> Remove book </button>
+
+    </div>
+
+    
+    <dialog id = "addbook-dialog">
+
+        <h2> Add book </h2>
+
+        <form method = "dialog">
+
+            <label for = "bookname"> Book :</label>
+            <input type = "text" id = "bookname" required>
+
+            <label for = "authorname"> Author :</label>
+            <input type = "text" id = "authorname" required>
+
+            <label for = "pagecount"> Pages :</label>
+            <input type = "text" id = "pagecount" required> 
+
+            <div>
+                <input type = "radio" id = "readbutton" name = "read-status" value = "read" required>
+                <label for = "readbutton"> READ </label>
+            </div>
+
+            <div>
+                <input type = "radio" id = "notreadbutton" name = "read-status" value = "not read" required>
+                <label for = "notreadbutton"> NOT READ </label>
+            </div>
+
+
+
+            <button id = "submit-button"> Submit </button>
+            <button id = "cancel-button"> Cancel </button>
+
+        </form>
+
+    </dialog>
+
+
+    
+
+
+
+
+</body>
+
+</html>
