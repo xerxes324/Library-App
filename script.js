@@ -4,7 +4,7 @@ let pagelist = document.getElementById("pagelist");
 let statuslist = document.getElementById("statuslist");
 let removelist = document.getElementById("removelist");
 
-const myLibrary = [];
+var myLibrary = [];
 
 const modal = document.getElementById("addbook-dialog");
 const addbook = document.getElementById("addbook");
@@ -121,11 +121,24 @@ function showradiobutton(uid, readcheck){
 }
 
 
+// deleting book
+
+removelist.addEventListener("click",(e)=>{
+    if (e.target.tagName === "INPUT"){
+
+        const del_id = e.target.dataset.id;
+        myLibrary = myLibrary.filter(book => book.uid !== del_id);
+        display();
+    } 
+})
+
+
+
 function deletebook(id){
 
     const delbutton = document.createElement("input");
     delbutton.type = "button";
-    delbutton.id = `delete-button-${id}`;
+    delbutton.dataset.id = id;
     delbutton.value = "DELETE BOOK";
     delbutton.classList.add("button_style");
 
@@ -133,8 +146,6 @@ function deletebook(id){
     delete_div.append(delbutton)
     delete_div.classList.add("delete-flex")
     removelist.append(delete_div);
-
-    delbuttoneventlistener()
 }
 
 
