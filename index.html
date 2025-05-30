@@ -32,6 +32,9 @@
         <div class = "column-4">
             <h1> Status </h1>
         </div>
+        <div class = "column-5">
+            <h1> Remove </h1>
+        </div>
     </div>
 
 
@@ -41,7 +44,8 @@
         <div id = "bookslist"></div>
         <div id = "authorlist"></div>
         <div id = "pagelist"></div>
-        <div id = "status"></div>
+        <div id = "statuslist"></div>
+        <div id = "removelist"></div>
 
     </div>
 
@@ -50,7 +54,6 @@
     <div class = "bottomhalf">
         
         <button id = "addbook"> Add new book </button>
-        <button id = "removebook"> Remove book </button>
 
     </div>
 
@@ -62,21 +65,21 @@
         <form method = "dialog">
 
             <label for = "bookname"> Book :</label>
-            <input type = "text" id = "bookname" required>
+            <input type = "text" id = "bookname">
 
             <label for = "authorname"> Author :</label>
-            <input type = "text" id = "authorname" required>
+            <input type = "text" id = "authorname">
 
             <label for = "pagecount"> Pages :</label>
-            <input type = "text" id = "pagecount" required> 
+            <input type = "text" id = "pagecount" > 
 
             <div>
-                <input type = "radio" id = "readbutton" name = "read-status" value = "read" required>
+                <input type = "radio" id = "readbutton" name = "read-status" value = "read" >
                 <label for = "readbutton"> READ </label>
             </div>
 
             <div>
-                <input type = "radio" id = "notreadbutton" name = "read-status" value = "not read" required>
+                <input type = "radio" id = "notreadbutton" name = "read-status" value = "not read" >
                 <label for = "notreadbutton"> NOT READ </label>
             </div>
 

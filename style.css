@@ -10,7 +10,7 @@ html,body
     width:100%;
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
 }
 .bottomhalf
 {
@@ -28,22 +28,27 @@ html,body
     padding: 10px;
     font-size: 30px;
     flex-grow: 0.5;
-    background-color: red;
 }
+
+#addbook{background-color: greenyellow;}
+#removebook{background-color: red;}
 
 .heading
 {
     justify-items: center;
     border-bottom: 2px solid black;
+    padding-top: 1rem;
+    color: white;
 }
 
 .column-names
 {
     display: flex;
     justify-content: space-around;
+    color:white;
 }
 
-.column-1, .column-2, .column-3, .column-4
+.column-1, .column-2, .column-3, .column-4, .column-5
 {
     width:25%;
     text-align: center;
@@ -55,12 +60,13 @@ html,body
     flex-grow: 1;
 }
 
-#bookslist, #authorlist, #pagelist, #status
+#bookslist, #authorlist, #pagelist, #statuslist, #removelist
 {
     flex-grow: 1;
     justify-items: center;
-    border: 2px solid black;
-    background-color: rgb(214, 209, 209);
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    max-width: 20%;
 }   
 
 #addbook-dialog
@@ -79,7 +85,6 @@ html,body
 
 form
 {
-    display:grid;
     row-gap:1%;
 }
 
@@ -89,8 +94,8 @@ form
 /* JS styling */
 
 .basic-styling{
-    line-height: 50px;
     font-size: 2rem;
+    height: 2rem;
     color: red;  
 }
 
@@ -98,3 +103,46 @@ form
 {
     text-transform: uppercase;
 }
+
+.radio-flex
+{
+    display: flex;
+    gap: 15px;
+    background-color: red;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    /* padding-top: 10px; */
+    font-size: 2rem;
+    height: 2rem;
+}
+
+.statuscolor-red
+{
+    background-color: red;
+    border-bottom: 2px solid black;
+}
+
+.statuscolor-green
+{
+    background-color: greenyellow;
+    border-bottom: 2px solid black;
+}
+
+.button_style
+{
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+}
+
+.delete-flex
+{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 2.8rem;
+}
+
