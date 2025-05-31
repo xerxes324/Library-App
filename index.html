@@ -65,23 +65,25 @@
         <form method = "dialog">
 
             <label for = "bookname"> Book :</label>
-            <input type = "text" id = "bookname">
+            <input type = "text" id = "bookname" required>
 
             <label for = "authorname"> Author :</label>
-            <input type = "text" id = "authorname">
+            <input type = "text" id = "authorname" required>
 
             <label for = "pagecount"> Pages :</label>
-            <input type = "text" id = "pagecount" > 
-
-            <div>
-                <input type = "radio" id = "readbutton" name = "read-status" value = "read" >
-                <label for = "readbutton"> READ </label>
+            <input type = "text" id = "pagecount" required> 
+            <div id = "radiobut">
+                <div>
+                    <input type = "radio" id = "readbutton" name = "read-status" value = "read" required>
+                    <label for = "readbutton"> READ </label>
+                </div>
+    
+                <div>
+                    <input type = "radio" id = "notreadbutton" name = "read-status" value = "not read" required>
+                    <label for = "notreadbutton"> NOT READ </label>
+                </div>
             </div>
 
-            <div>
-                <input type = "radio" id = "notreadbutton" name = "read-status" value = "not read" >
-                <label for = "notreadbutton"> NOT READ </label>
-            </div>
 
 
 

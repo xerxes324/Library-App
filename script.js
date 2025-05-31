@@ -17,6 +17,7 @@ const submit = document.getElementById("submit-button");
 addbook.addEventListener("click", ()=>
 {
     modal.showModal();
+
 })
 
 
@@ -43,8 +44,11 @@ function Book(bookname, authorname, pagecount, readcheck, uid){
     this.pagecount = pagecount;
     this.readcheck = readcheck;
     this.uid = uid;
-    myLibrary.push(this);
-    display();
+
+    if(this.bookname && this.authorname && this.pagecount && this.readcheck){
+        myLibrary.push(this);
+        display();
+    }
 }
 
 Book.prototype.togglereadstatus = function(value){
@@ -78,7 +82,6 @@ function showradiobutton(uid, readcheck){
     radio1.type = "radio";
     radio1.name = `read-status-${uid}`;
     radio1.id = `read-${uid}`;
-    radio1.classList.add("radiobutton-styling");
     
     const label1 = document.createElement("label");
     label1.setAttribute('for',`read-${uid}`);
@@ -88,7 +91,6 @@ function showradiobutton(uid, readcheck){
     radio2.type = "radio";
     radio2.name = `read-status-${uid}`;
     radio2.id = `notread-${uid}`;
-    radio2.classList.add("radiobutton-styling");
 
     const label2 = document.createElement("label");
     label2.setAttribute('for',`notread-${uid}`);
@@ -97,7 +99,7 @@ function showradiobutton(uid, readcheck){
 
 
     // wrapping for css 
-    const div = document.createElement("div");
+    const div = document.createElement("TABLE");
     div.append(radio1, label1, radio2, label2);
     div.classList.add("radio-flex");
     statuslist.append(div);
@@ -142,7 +144,7 @@ function deletebook(id){
     delbutton.value = "DELETE BOOK";
     delbutton.classList.add("button_style");
 
-    const delete_div = document.createElement("div");
+    const delete_div = document.createElement("TABLE");
     delete_div.append(delbutton)
     delete_div.classList.add("delete-flex")
     removelist.append(delete_div);
@@ -157,27 +159,25 @@ function display(){
     removelist.innerHTML = ""
     myLibrary.forEach(e => {
 
-        const booktag = document.createElement("h2");
-        const authortag = document.createElement("h2");
-        const pagetag = document.createElement("h2");
+        const booktag = document.createElement("TABLE");
+        const authortag = document.createElement("TABLE");
+        const pagetag = document.createElement("TABLE");
 
         booktag.innerHTML = e.bookname;
         authortag.innerHTML = e.authorname;
         pagetag.innerHTML = e.pagecount;
-
-        bookslist.append(booktag);
-        authorlist.append(authortag);
-        pagelist.append(pagetag);
 
         //styling
 
         const elements_styling = [booktag,authortag,pagetag];
         elements_styling.forEach(element => {
             element.classList.add("basic-styling");
-            if ( element != pagetag ){
-                element.classList.add("fancytext");
-            }
         });
+
+        bookslist.append(booktag);
+        authorlist.append(authortag);
+        pagelist.append(pagetag);
+
         
         deletebook(e.uid);
         showradiobutton(e.uid, e.readcheck);

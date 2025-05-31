@@ -6,7 +6,7 @@
 
 html,body
 {
-    height:100%;
+    height:100vh;
     width:100%;
     display: flex;
     flex-direction: column;
@@ -73,8 +73,11 @@ html,body
 {
     top : 50%;
     left : 50%;
-    transform: translate(-50%,-75%);
-    padding: 2em;
+    transform: translate(-50%,-50%);
+    padding: 3rem;
+    text-align: center;
+    background-color: greenyellow;
+    font-size: larger;
 }
 
 #addbook-dialog::backdrop
@@ -83,39 +86,64 @@ html,body
     opacity: 0.7;
 }
 
-form
+#addbook-dialog h2
 {
-    row-gap:1%;
+    margin-bottom: 3rem;
 }
 
+#bookname, #authorname, #pagecount
+{
+    font-size: larger;
+    justify-content: center;
+}
 
+#radiobut
+{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+#submit-button, #cancel-button
+{
+    background-color: red;
+    margin-top: 1rem;
+    height: 2rem;
+    width: 100%;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* JS styling */
 
 .basic-styling{
     font-size: 2rem;
-    height: 2rem;
+    max-height: 5%;
+    table-layout: fixed;
     color: red;  
+    border: 1px solid white;
+    width: 100%;
+    text-align: center;
 }
 
 .fancytext::first-letter
 {
-    text-transform: uppercase;
+    text-transform:uppercase;
+
 }
 
 .radio-flex
 {
-    display: flex;
-    gap: 15px;
-    background-color: red;
     width:100%;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10px;
-    /* padding-top: 10px; */
+    min-height: 5%;
+    max-height: 5%;
     font-size: 2rem;
-    height: 2rem;
+    text-align:center;
+    align-content: space-around;
 }
 
 .statuscolor-red
@@ -132,17 +160,22 @@ form
 
 .button_style
 {
-    width: 100%;
-    height: 100%;
-    background-color: purple;
+    width: 50%;
+    height: 1.5rem;
+    background-color: white;
+    transform: translate(0%,-20%);
+    font-size: large;
+    
 }
 
 .delete-flex
 {
-    display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 2.8rem;
+    max-height: 5%;
+    font-size: 2rem;
+    background-color: rgb(220, 220, 220);
+    border-bottom: 2px solid black;
+    justify-items: center;
+    text-align: center;
 }
 
