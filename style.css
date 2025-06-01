@@ -6,11 +6,15 @@
 
 html,body
 {
-    height:100vh;
+    min-height:100vh;
     width:100%;
     display: flex;
     flex-direction: column;
     background-color: rgb(0, 0, 0);
+    font-family: 'XoloniumRegular';
+    font-weight: normal;
+    font-style: normal;
+     
 }
 .bottomhalf
 {
@@ -64,7 +68,7 @@ html,body
 {
     flex-grow: 1;
     justify-items: center;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgb(241, 41, 41);
     background-color: rgb(0, 0, 0);
     max-width: 20%;
 }   
@@ -165,6 +169,9 @@ form
     background-color: white;
     transform: translate(0%,-20%);
     font-size: large;
+    font-family: 'XoloniumRegular';
+    font-weight: normal;
+    font-style: normal;
     
 }
 
@@ -177,5 +184,6 @@ form
     border-bottom: 2px solid black;
     justify-items: center;
     text-align: center;
+
 }
 

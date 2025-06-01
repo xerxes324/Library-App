@@ -17,7 +17,6 @@ const submit = document.getElementById("submit-button");
 addbook.addEventListener("click", ()=>
 {
     modal.showModal();
-
 })
 
 
@@ -34,7 +33,8 @@ submit.addEventListener("click",()=>
     const readcheck = document.querySelector('input[name="read-status"]:checked');
     const bookid = crypto.randomUUID();
     const mybook = new Book(bookname, authorname, pagecount, readcheck.value, bookid)
-
+    document.getElementById("form1").reset();
+    modal.close()
 })
 
 
@@ -133,7 +133,6 @@ removelist.addEventListener("click",(e)=>{
         display();
     } 
 })
-
 
 
 function deletebook(id){
